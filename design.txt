@@ -1,0 +1,76 @@
+main.c
+define
+	nodes_[150] links_[MAX_link]
+	t=1000
+
+main
+	read file to node link  to n=150 and l
+	clac bandwith delay arrival_time size service_time
+	clac routing_table
+	clac no_of_quenes???
+	select 20_src_dst
+	for(;t>0;t--)
+	{
+	for(i=0;i<n;i++)
+		routing(i);
+	}
+	
+	
+	
+	
+	
+	
+	
+global.h
+	extern int t
+	class nodes links
+	extern node link
+	extern int n,l
+
+class links {
+public:
+	int delay;
+  	double bandwidth;
+	int node_1, node_2;
+};
+
+class nodes {
+public:
+	int name;
+ 	int input_queue[30];
+	int output_queue[30]
+	int routing_table[4];//N-1 next nodes
+	int service_time;
+	int last_service_t;
+	bool src;
+	int last_create_t;
+	int dst;// for the src-dst pair
+};
+
+
+packet.h
+class packets {
+public:
+	int size;
+	int src, dst;
+	int unpacked; //-1 means not been unpacked //other numbers mean the order, 0 is the last one
+};
+class packets packet[];
+create_packet(){}
+
+
+
+routing.h
+routing(){
+	output()
+	input()
+	create_packet()
+	forward(self,packet[])
+}
+output(){forward(next,packet[])}//calc next
+input() //take a packet from input queues to output // if this is destination ….//also size&bandwidth
+forward()//take a packet from a node to next
+
+
+routing_table.h
+calc_table()
